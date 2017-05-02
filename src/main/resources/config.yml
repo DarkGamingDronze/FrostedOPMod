@@ -1,0 +1,11 @@
+#-------------------------#
+#     FrostedOPMod: R     #
+#     version: ALPHA-1    #
+#     creator: savnith    #
+#-------------------------#
+
+mysql:
+    ip-port: ""
+    database: ""
+    database-user: ""
+    database-password: ""
