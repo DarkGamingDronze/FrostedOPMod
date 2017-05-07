@@ -1,11 +1,50 @@
 #-------------------------#
 #     FrostedOPMod: R     #
-#     version: ALPHA-1    #
+#       version: 1.0      #
 #     creator: savnith    #
 #-------------------------#
 
+## MySQL Database for player punishments ##
 mysql:
-    ip-port: ""
-    database: ""
+    ip-port: "0.0.0.0:3306"
+    database: "fop_"
     database-user: ""
     database-password: ""
+    
+    ## Table name ##
+    database-table-name: "fopmr_"
+
+## General Server stuff ##
+server:
+    name: "FrostedOP"
+    ip: "mc.frostedop.net"
+    
+    ## All the motd's ##
+    nj-motd-line1: "&b&m-----&3&m-----&8&l[&b&l FrostedOP &8&l]&3&m-----&b&m-----"
+    nj-motd-line2: "&b&m- &3Never joined before huh? Why don't we fix that! &b&m-"
+    
+    # Main Motd
+    motd-line-1: "&b&m-----&3&m-----&8&l[&b&l FrostedOP &8&l]&3&m-----&b&m-----"
+    motd-line-2: "&b&m- &3Welcome back to %servername%, %playername%! &b&m-"
+    
+    # Server Full Motd
+    motd-full-server: "&cThe server is currently full"
+
+## Admin stuff ##
+admin:
+    ## Who is the server owner? ##
+    owner:
+        - iFrostBite
+    
+    ## Who is a developer? ##
+    developer:
+        - CyderFTW
+        
+    ## Who is the admin manager? ##
+    admin-manager:
+        - FunnehAshley
+    
+disabled:
+    cmdblock: true
+    lava-place: true
+    water-place: true

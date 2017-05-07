@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
+import net.savcode.fopmr.blocking.BlockPlace;
+import net.savcode.fopmr.config.FOPMR_ConfigEntry;
+import net.savcode.fopmr.config.FOPMR_ConfigFiles;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,16 +23,18 @@ public class FrostedOPMod extends JavaPlugin implements Listener {
     }
     
     @Override
+    @SuppressWarnings("ResultOfObjectAllocationIgnored")
     public void onEnable() {
         getLogger().log(Level.INFO, "---------------------");
         getLogger().log(Level.INFO, "FrostedOPMod: R\nversion: {0}\nauthors: {1}", new Object[] { 
             pdf.getVersion(), pdf.getAuthors() });
         getLogger().log(Level.INFO, "---------------------");
         // start stuff
+        new FOPMR_ConfigFiles();
+        new BlockPlace();
         this.openConnection();
-        getConfig().options().copyDefaults(true);
-	saveConfig();
     }
+    
     
     @Override
     public void onDisable() {
@@ -48,12 +53,16 @@ public class FrostedOPMod extends JavaPlugin implements Listener {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(
                     "jdbc:" + 
-                            plugin.getConfig().getString("mysql.ip-port") + "/" + 
-                            plugin.getConfig().getString("mysql.database") + "?user=" +
-                            plugin.getConfig().getString("mysql.database-user") + "&password=" +
-                            plugin.getConfig().getString("mysql.database-password"));
+                            FOPMR_ConfigEntry.MainConfig().getString("mysql.ip-port") + "/" + 
+                            FOPMR_ConfigEntry.MainConfig().getString("mysql.database") + "?user=" +
+                            FOPMR_ConfigEntry.MainConfig().getString("mysql.database-user") + "&password=" +
+                            FOPMR_ConfigEntry.MainConfig().getString("mysql.database-password"));
         }catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean isInitialized() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
