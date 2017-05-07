@@ -14,4 +14,12 @@ public class FOPMR_ConfigEntry {
     public static final FileConfiguration MainConfig() {
         return FOPMR_ConfigFiles.getMConfig().getConfig();
     }
+    
+    public static final FileConfiguration AdminConfig() {
+        return FOPMR_ConfigFiles.getAdmins().getConfig();
+    }
+    
+    public static final FileConfiguration DonatorConfig() {
+        return FOPMR_ConfigFiles.getDonators().getConfig();
+    }
 }

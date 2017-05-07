@@ -31,6 +31,7 @@ public class FrostedOPMod extends JavaPlugin implements Listener {
         getLogger().log(Level.INFO, "---------------------");
         // start stuff
         new FOPMR_ConfigFiles();
+        new FOPMR_MainListener();
         new BlockPlace();
         this.openConnection();
     }
