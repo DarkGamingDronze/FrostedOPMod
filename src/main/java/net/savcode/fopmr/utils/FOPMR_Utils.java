@@ -10,6 +10,11 @@ public class FOPMR_Utils {
     public static final List<String> DEVELOPER = Arrays.asList("Savnith", "CyderFTW");
     public static final List<String> OWNER = Arrays.asList("iFrostBite");
     
+    private FOPMR_Utils() {
+        
+    }
+    
+    
     public static int bcastMsg(String message) {
         return Bukkit.broadcastMessage(message);
     }

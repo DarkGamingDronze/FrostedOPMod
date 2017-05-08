@@ -11,6 +11,9 @@ public class FOPMR_ConfigEntry {
         return FOPMR_ConfigFiles.getPlayer().getConfig();
     }
     
+    public static final FileConfiguration BansConfig() {
+        return FOPMR_ConfigFiles.getBans().getConfig();
+    }
     public static final FileConfiguration MainConfig() {
         return FOPMR_ConfigFiles.getMConfig().getConfig();
     }

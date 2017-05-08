@@ -23,10 +23,6 @@ public class FOPMR_Config {
             throw new IllegalArgumentException("plugin cannot be null");
         }
         
-        if(!plugin.isInitialized()) {
-            throw new IllegalArgumentException("plugin must be initialized");
-        }
-        
         this.plugin = plugin;
         this.fileName = fileName;
         File dataFolder = plugin.getDataFolder();
