@@ -26,33 +26,33 @@ public class C_opall extends FOPMR_Command {
         Collection<Player> online = (Collection<Player>) Bukkit.getOnlinePlayers();
         
         if (args.length == 0) {
-            online.forEach((target) -> {
-                target.sendMessage(ChatColor.AQUA + sender.getName() + " - Opping all players on the server!");
-                target.sendMessage(OP);
-                target.setOp(true);
-            });
+            for(Player player: online){
+                player.sendMessage(ChatColor.AQUA + sender.getName() + " - Opping all players on the server!");
+                player.sendMessage(OP);
+                player.setOp(true);
+            }
             return true;
         }
         
         if (args.length == 1) {
             
             if (args[0].equals("-c")) {
-                online.forEach((target) -> {
-                    target.sendMessage(ChatColor.AQUA + sender.getName() + " - Opping all players on the server!");
-                    target.sendMessage(OP);
-                    target.setOp(true);
-                    target.setGameMode(GameMode.CREATIVE);
-                });
+                for(Player player: online){
+                    player.sendMessage(ChatColor.AQUA + sender.getName() + " - Opping all players on the server!");
+                    player.sendMessage(OP);
+                    player.setOp(true);
+                    player.setGameMode(GameMode.CREATIVE);
+                }
                 return true;
             }
             
             if (args[0].equals("-s")) {
-                online.forEach((target) -> {
-                    target.sendMessage(ChatColor.AQUA + sender.getName() + " - Opping all players on the server!");
-                    target.sendMessage(OP);
-                    target.setOp(true);
-                    target.setGameMode(GameMode.SURVIVAL);
-                });
+                for(Player player: online){
+                    player.sendMessage(ChatColor.AQUA + sender.getName() + " - Opping all players on the server!");
+                    player.sendMessage(OP);
+                    player.setOp(true);
+                    player.setGameMode(GameMode.SURVIVAL);
+                }
                 return true;
             }
         }
